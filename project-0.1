@@ -1,0 +1,9 @@
+from atproto import Client
+
+usuario = "censurado"
+senha = "censurado"
+
+cliente = Client()
+cliente.login(usuario, senha)
+
+cliente.send_post(text="Ola, boa tarde")
