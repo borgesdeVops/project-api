@@ -1,0 +1,18 @@
+from atproto import Client
+import requests
+
+usuario = "censurado"
+senha = "censurado"
+
+cliente = Client()
+cliente.login(usuario, senha)
+
+url_clima = "https://api.opne-meteo.com/v1/forecast?latitude=-18.9186&longtude=-48.277&current=temperature_2m"
+
+resposta = resquest.get(url_clima)
+dados_clima = resposta.json()
+
+temperatura = dados_clima["current"]["temperatura"]
+frase_final = f"O tempo agora em Uberlândia é de {temperatura}°C!"
+cliente.send_post(text=frase_final)
+cliente.send_post(text="Ola, boa tarde")
